@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- add css file -->
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="d-flex justify-content-between container shadow-sm p-4">
+        <img class="w-auto" src="./resources/Logo.png" alt="" />
+        <div class="m-auto">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="loadViewsData()"
+          >
+            Sort by view
+          </button>
+        </div>
+        <div class="my-auto">
+          <button type="button py-4 px-5 " class="bg- btn btn-danger fw-bold">
+            BLOG
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="py-5">
+      <div class="d-flex justify-content-center gap-4">
+        <button
+          class="px-4 rounded-1 py-2 border-0 shadow-lg fw-bold"
+          onclick="loadData(this) "
+          id="allButton"
+        >
+          All
+        </button>
+        <button
+          id="musicButton"
+          class="px-4 rounded-1 py-2 border-0 shadow-lg fw-bold"
+          onclick="loadMusicData()"
+        >
+          Music
+        </button>
+
+        <button
+          id="comedyButton"
+          class="px-4 rounded-1 py-2 border-0 shadow-lg fw-bold"
+          onclick="loadComadyData()"
+        >
+          Comedy
+        </button>
+        <button
+          id="drawingButton"
+          class="px-4 rounded-1 py-2 border-0 shadow-lg fw-bold"
+          onclick="loadDrawingData()"
+        >
+          Drawing
+        </button>
+      </div>
+      <div class="my-5">
+        <div id="divContainer">
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border text-danger" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
