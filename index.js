@@ -16,7 +16,8 @@ const displayData = (data) => {
     });
     card.innerHTML = `
   <div class="card" style="width: 18rem;">
-    <img src="${element.thumbnail}" class="card-img-top" alt="...">
+    <img src="${element.thumbnail}" style="width: 312px;
+    height: 200px;" alt="...">
   </div>
   <div class="d-flex">
     <img style="width:50px; height:50px;border-radius: 40px; margin-left:20px" src="${img}" class="card-img-top" alt="...">
