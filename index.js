@@ -335,8 +335,23 @@ function openBlogInNewTab() {
   // Create a new tab and write the blog content to it
   const newTab = window.open();
   newTab.document.write(`
-  
-      <div id="accordian_container" class="w-50 m-auto" style="margin-top:100px">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <!-- add css file -->
+      <link rel="stylesheet" href="./style.css" />
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+      />
+    </head>
+    <body class="bg-secondary">
+      <div id="accordian_container" class="w-50  my-5 m-auto" style="margin-top:100px">
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -348,7 +363,7 @@ function openBlogInNewTab() {
                 aria-expanded="false"
                 aria-controls="flush-collapseOne"
               >
-                Discuss the scope of var, let, and const
+                Discuss the scope of var, let, and const ?
               </button>
             </h2>
             <div
@@ -388,7 +403,7 @@ function openBlogInNewTab() {
                 aria-expanded="false"
                 aria-controls="flush-collapseTwo"
               >
-                Tell us the use cases of null and undefined
+                Tell us the use cases of null and undefined ?
               </button>
             </h2>
             <div
@@ -419,7 +434,7 @@ function openBlogInNewTab() {
                 aria-expanded="false"
                 aria-controls="flush-collapseThree"
               >
-                What do you mean by REST API?
+                What do you mean by REST API ?
               </button>
             </h2>
             <div
@@ -443,7 +458,6 @@ function openBlogInNewTab() {
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"
       ></script>
-      <script src="./index.js"></script>
     </body>
   </html>
   
