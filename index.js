@@ -1,3 +1,4 @@
+var curr_url = "https://openapi.programming-hero.com/api/videos/category/1000";
 const loadData = () => {
   fetch("https://openapi.programming-hero.com/api/videos/category/1000")
     .then((response) => response.json())
@@ -74,6 +75,8 @@ const loadMusicData = () => {
   fetch("https://openapi.programming-hero.com/api/videos/category/1000")
     .then((response) => response.json())
     .then((data) => displayMusicData(data));
+
+  curr_url = "https://openapi.programming-hero.com/api/videos/category/1001";
 };
 
 const displayMusicData = (data) => {
@@ -148,6 +151,7 @@ const loadComadyData = () => {
     .then((response) => response.json())
     .then((data) => displayComadyData(data));
   changeButtonColor(comedyButton);
+  curr_url = "https://openapi.programming-hero.com/api/videos/category/1003";
 };
 
 const displayComadyData = (data) => {
@@ -309,7 +313,7 @@ const parseViews = (viewsString) => {
 };
 
 const loadViewsData = () => {
-  fetch("https://openapi.programming-hero.com/api/videos/category/1000")
+  fetch(curr_url)
     .then((response) => response.json())
     .then((data) => displayViewsData(data));
 };
