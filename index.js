@@ -10,16 +10,38 @@ const displayData = (data) => {
   divContainer.innerHTML = "";
   data.data.forEach((element) => {
     const card = document.createElement("div");
+
+    const time = Math.floor(element.others.posted_date / 3600);
+    const min = Math.floor((element.others.posted_date % 3600) / 60);
     card.classList.add("card");
     const img = element.authors.map((pic) => {
       return pic.profile_picture;
     });
     card.innerHTML = `
-  <div class="card" style="width: 18rem;">
-    <img src="${element.thumbnail}" style="width: 312px;
-    height: 200px;" alt="...">
+    <div class="card" style="width: 18rem;">
+      <img src="${
+        element.thumbnail
+      }" style="width: 312px; height: 200px;" alt="...">
+      ${
+        time > 0 && time < 24
+          ? `
+            <div style="position: relative; margin-left: 10px;">
+              <span style="position: absolute; bottom: 10px; right: -10px; background-color: rgba(0, 0, 0, 0.9); color: white; padding: 3px;">
+                ${time} hour ${min} min ago
+              </span>
+            </div>`
+          : ""
+      }
+    </div>
+  
+  
+
+
+
+
+    
   </div>
-  <div class="d-flex">
+  <div class="d-flex mt-5">
     <img style="width:50px; height:50px;border-radius: 40px; margin-left:20px" src="${img}" class="card-img-top" alt="...">
     <div style="flex:flex-start">
       <h5 class="card-title" style=" margin-left:40px">${element.title}</h5>
@@ -329,13 +351,10 @@ drawingButton.addEventListener("click", () => {
 });
 
 function openBlogInNewTab() {
-  // Get the content of the blog div that you want to display
   const blogContent = document.getElementById("accordian_container").innerHTML;
 
-  // Create a new tab and write the blog content to it
   const newTab = window.open();
-  newTab.document.write(`
-  <!DOCTYPE html>
+  newTab.document.write(`<!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
