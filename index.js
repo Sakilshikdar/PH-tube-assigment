@@ -6,6 +6,7 @@ const loadData = () => {
 };
 
 const displayData = (data) => {
+  document.getElementById("sortButton").style.display = "";
   const divContainer = document.getElementById("divContainer");
 
   divContainer.innerHTML = "";
@@ -80,6 +81,7 @@ const loadMusicData = () => {
 };
 
 const displayMusicData = (data) => {
+  document.getElementById("sortButton").style.display = "";
   const divContainer = document.getElementById("divContainer");
   const musicData = data.data.filter((element) => element.category_id == 1001);
 
@@ -156,6 +158,8 @@ const loadComadyData = () => {
 
 const displayComadyData = (data) => {
   const divContainer = document.getElementById("divContainer");
+
+  document.getElementById("sortButton").style.display = "";
   const musicData = data.data.filter((element) => element.category_id == 1003);
 
   divContainer.innerHTML = "";
@@ -228,6 +232,9 @@ const loadDrawingData = () => {
 
 const displayDrawingData = (data) => {
   const divContainer = document.getElementById("divContainer");
+  // hidden sortButton
+  document.getElementById("sortButton").style.display = "none";
+
   const musicData = data.data.filter((element) => element.category_id == 1005);
   if (musicData.length === 0) {
     divContainer.innerHTML = `
